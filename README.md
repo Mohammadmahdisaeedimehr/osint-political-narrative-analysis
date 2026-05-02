@@ -2,53 +2,89 @@
 
 ## Overview
 
-This repository provides a reusable analytical framework for studying political narratives, public opinion, and behavioral patterns in social media environments using natural language processing (NLP), OSINT methodologies, and data-driven analysis.
+This repository provides a reusable analytical framework for studying political narratives, public opinion, and behavioral patterns in social media data.
 
-The framework is designed to move beyond simple sentiment analysis and instead capture how narratives are constructed, how threats are perceived, and how public discourse evolves in response to geopolitical events.
+The framework is designed for projects that combine OSINT, social media analysis, NLP, and political behavior research. It focuses on how public discourse forms around crises, how key actors are perceived, and how narratives evolve across time, users, and platforms.
+
+This repository is a methodological framework. Applied country-level case studies are maintained as separate repositories.
 
 ---
 
 ## Core Purpose
 
-The project focuses on answering a deeper layer of analytical questions:
+The framework is built to answer questions such as:
 
-- How are political narratives formed and structured in social media?
-- What drives negative or positive perception toward key actors?
-- How do security, economic, and identity concerns combine in public opinion?
-- How do institutional actors differ from ordinary users in framing reality?
-- How do crises become localized in public perception?
+- How are political narratives structured in social media discourse?
+- Which actors become central in public perception during crises?
+- How do users frame threat, security, identity, diplomacy, and regional conflict?
+- How do institutional, media, influencer, and ordinary-user accounts differ in framing events?
+- How does online public opinion shift over time?
+- Which themes carry high sensitivity or de-escalation potential?
 
 ---
 
 ## Analytical Layers
 
-The framework operates across multiple analytical layers:
+### 1. Data Audit Layer
 
-### 1. Narrative Layer
-- Identification of dominant narratives
-- Narrative clustering and thematic segmentation
-- Co-occurrence and narrative network mapping
+- Dataset structure review
+- File comparison and validation
+- Missing-value analysis
+- Duplicate detection
+- Distinction between raw rows, unique posts, and unique users
 
-### 2. Topic Layer
-- Mutually exclusive topic classification
-- Share-based distribution analysis
-- Structural mapping of discourse
+### 2. Metadata and Engagement Layer
 
-### 3. Stance Layer
-- Binary stance classification (positive vs negative)
-- Actor-specific perception analysis
-- Crisis-related positioning
+- Impressions
+- Views
+- Likes
+- Replies
+- Reposts
+- Quotes
+- Account-level activity
 
-### 4. Behavioral Layer
-- Emotion-driven reactions (fear, anger, threat perception)
-- Risk perception and security sensitivity
-- Collective behavioral patterns
+This layer helps distinguish between content volume and actual visibility or influence.
 
-### 5. Temporal Layer
-- Time-series analysis of discourse
-- Crisis evolution tracking
+### 3. Topic Layer
+
+Topic classification is designed to be mutually exclusive. Each post is assigned to one dominant topic, and topic shares should sum to 100 percent.
+
+### 4. Narrative Layer
+
+Narrative mapping is based on co-occurrence and semantic connections between themes.
+
+This layer identifies:
+
+- Central narrative nodes
+- Co-occurring themes
+- Narrative clusters
+
+### 5. Stance Layer
+
+Stance analysis identifies positive and negative attitudes toward key actors, policies, and crisis-related issues.
+
+### 6. Account-Type Layer
+
+Accounts can be grouped into:
+
+- Official and institutional accounts
+- Media and news accounts
+- Influencers and analysts
+- Ordinary users
+
+### 7. Temporal Layer
+
+- Daily content volume
+- Daily impressions
+- Discourse waves
 - Narrative shifts over time
 
+### 8. Strategic Interpretation Layer
+
+- Sensitivity matrix
+- De-escalation potential
+- Narrative risk mapping
+- Strategic implications
 ---
 
 ## Project Architecture
@@ -66,99 +102,129 @@ src/
   topic_classification.py
   narrative_mapping.py
   stance_detection.py
-  emotion_analysis.py
+  engagement_metrics.py
 
 notebooks/
+  01_data_audit.ipynb
+  02_metadata_and_deduplication.ipynb
+  03_temporal_analysis.ipynb
+  04_topic_classification.ipynb
+  05_narrative_mapping.ipynb
+  06_stance_analysis.ipynb
+  07_account_type_analysis.ipynb
+  08_report_tables.ipynb
+
+outputs/
+  tables/
+  figures/
+
+reports/
+  final_report_summary.md
+
 dashboard/
-report/
-docs/
+  app.py
+خo
 ```
-
-
 
 
 ## Methodological Principles
 
-- Topic classification is strictly mutually exclusive and sums to 100%
-- Narrative mapping is based on co-occurrence and is not forced to sum
-- All analysis is data-driven and reproducible
-- Raw datasets are not publicly shared for privacy and ethical reasons
-- Outputs are designed for direct use in research, policy, and strategic analysis
+- Raw datasets are not publicly shared when privacy, platform, or organizational restrictions apply.
+- Reports should clearly distinguish between raw rows, unique posts, and unique users.
+- Topic classification should be mutually exclusive when percentage shares are reported.
+- Narrative mapping can be non-exclusive because it represents semantic relationships.
+- Engagement-weighted analysis should be separated from content-volume analysis.
+- Account-type comparisons should clarify whether influence is driven by institutions, media, influencers, or ordinary users.
+- Strategic recommendations should be derived from the data and limited to public communication, transparency, de-escalation, and risk reduction.
+---
+
+## Applied Case Studies
+
+This framework is intended to support separate country-level or case-level repositories.
+
+Current and planned applications include:
+
+- Kuwait public opinion on the Iran 2026 War
+- Qatar public opinion on the Iran 2026 War
+- United Arab Emirates public opinion on the Iran 2026 War
+
+Each case study should have its own repository, dataset notes, methodology, report summary, and publication-safe outputs.
 
 ---
 
-## Applied Project: GCC Public Opinion Analysis
+## Data Availability
 
-This framework is currently applied in a multi-country analytical project:
+The original datasets used in applied projects may not be publicly shared due to privacy, platform, and organizational restrictions.
 
-### Public Opinion in the Persian Gulf toward the Iran 2026 War
+When raw data cannot be shared, repositories should still include:
 
-Countries covered:
-
-- Bahrain
-- Qatar (planned)
-- Kuwait (planned)
-- United Arab Emirates (planned)
-
-This applied project transforms the framework into real-world analytical reports including:
-
-- Narrative maps
-- Stance distributions
-- Sensitivity matrices
-- Public opinion dynamics
-- Policy-relevant insights
+- Project structure
+- Methodology
+- Data dictionary, when safe
+- Reproducible code templates
+- Aggregated tables
+- Visual outputs
+- Report summaries
+- Ethical and methodological notes
 
 ---
 
 ## Outputs
 
-- Cleaned and structured datasets
-- Narrative and topic distributions
-- Stance analysis toward key actors
-- Account-type comparative analysis
-- Sensitivity and risk matrices
+This framework supports the production of:
+
+- Data audit summaries
+- Deduplication reports
+- Topic distribution tables
+- Narrative co-occurrence maps
+- Stance analysis tables
+- Account-type comparison tables
+- Daily trend tables
+- Sensitivity matrices
 - Strategic analytical reports
-- Visualization dashboards
+- Dashboard prototypes
 
 ---
 
 ## Tools and Technologies
 
 - Python
-- pandas, numpy
+- pandas
+- NumPy
 - scikit-learn
-- NLP libraries (NLTK, spaCy)
-- matplotlib, seaborn, plotly
+- NLP libraries such as NLTK or spaCy
+- Matplotlib
+- Seaborn
+- Plotly
 - Streamlit
-
+- Google AppSheet, when relevant for internal policy-analysis interfaces
 ---
 
-## Current Status
+## Status
 
-Core framework is established.
-
-First applied case:
-- Bahrain public opinion toward the Iran 2026 War (completed)
+Core framework established.
 
 Next steps:
-- Extend to Qatar, Kuwait, and UAE
-- Build comparative Gulf-level analysis
-- Develop interactive dashboards
+
+- Add reusable notebook templates
+- Add sample synthetic data
+- Build the Kuwait case-study repository
+- Add example output tables and figures
+- Develop a simple dashboard prototype
+---
+## Disclaimer
+
+This repository represents independent methodological and portfolio work. It does not represent any organization, employer, client, or institution.
+
+Raw datasets and sensitive operational details are not included.
 
 ---
 
 ## Author
 
-Political and Behavioral Data Analyst
+Mohammad Mahdi Saeedimehr  
 
-Focused on:
-- Public opinion analysis
-- OSINT and social media intelligence
-- Political narrative analysis
-- NLP and computational social science
+Political and Behavioral Data Analyst  
+Computational Social Science | OSINT | Public Opinion Analysis  
 
-Background in:
-- Political sociology
-- Cognitive science
-- Behavioral analysis
-
+Focus: Middle East, political narratives, social media data analysis, and crisis-related public perception
