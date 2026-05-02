@@ -1,99 +1,164 @@
-# OSINT Political Narrative Analysis
+# OSINT Political Narrative Analysis Framework
 
 ## Overview
-This project analyzes political narratives, emotions, and behavioral patterns in social media data using natural language processing (NLP) and machine learning.
 
-The objective is to understand how people express attitudes, emotions, and political viewpoints in digital environments, and to uncover patterns in public discourse.
+This repository provides a reusable analytical framework for studying political narratives, public opinion, and behavioral patterns in social media environments using natural language processing (NLP), OSINT methodologies, and data-driven analysis.
 
-## Problem Statement
-Political discussions on social media are often driven by emotions, narratives, and cognitive biases.
+The framework is designed to move beyond simple sentiment analysis and instead capture how narratives are constructed, how threats are perceived, and how public discourse evolves in response to geopolitical events.
 
-This project aims to answer:
+---
 
-- What narratives dominate political conversations?
-- Which emotions such as anger, fear, and trust are most common?
-- How do keywords and topics evolve across discussions?
-- Can machine learning classify political stance or emotional tone?
+## Core Purpose
 
-## Project Goals
-- Analyze social media text data related to political or social issues
-- Extract patterns in narratives, emotions, and public opinion
-- Apply NLP techniques to understand textual data
-- Build baseline machine learning models for classification
-- Visualize findings through dashboards
-- Produce interpretable insights relevant to social and political analysis
+The project focuses on answering a deeper layer of analytical questions:
 
-## Project Structure
+- How are political narratives formed and structured in social media?
+- What drives negative or positive perception toward key actors?
+- How do security, economic, and identity concerns combine in public opinion?
+- How do institutional actors differ from ordinary users in framing reality?
+- How do crises become localized in public perception?
 
-data  
-  raw            original datasets  
-  processed      cleaned and processed data  
+---
 
-notebooks        exploratory analysis and experiments  
+## Analytical Layers
 
-src              core source code and reusable modules  
+The framework operates across multiple analytical layers:
 
-dashboard        streamlit or visualization apps  
+### 1. Narrative Layer
+- Identification of dominant narratives
+- Narrative clustering and thematic segmentation
+- Co-occurrence and narrative network mapping
 
-report           analytical reports and documentation  
+### 2. Topic Layer
+- Mutually exclusive topic classification
+- Share-based distribution analysis
+- Structural mapping of discourse
 
-README.md  
-requirements.txt  
+### 3. Stance Layer
+- Binary stance classification (positive vs negative)
+- Actor-specific perception analysis
+- Crisis-related positioning
 
-## Planned Methods
+### 4. Behavioral Layer
+- Emotion-driven reactions (fear, anger, threat perception)
+- Risk perception and security sensitivity
+- Collective behavioral patterns
 
-Data Processing  
-- Data cleaning  
-- Text normalization  
-- Removing noise and stopwords  
+### 5. Temporal Layer
+- Time-series analysis of discourse
+- Crisis evolution tracking
+- Narrative shifts over time
 
-Exploratory Data Analysis  
-- Distribution of text length  
-- Word frequency analysis  
-- Keyword extraction  
+---
 
-NLP Analysis  
-- Sentiment analysis  
-- Emotion detection  
-- Topic identification  
+## Project Architecture
 
-Behavioral Layer  
-- Emotion classification such as anger, fear, trust, neutral  
-- Narrative detection  
-- Behavioral pattern analysis  
+```text
+data/
+  raw/
+  processed/
+  sample/
 
-Machine Learning  
-- Text classification models such as Logistic Regression and Naive Bayes  
-- Model evaluation using accuracy, precision, recall, and F1  
+src/
+  data_cleaning.py
+  deduplication.py
+  text_preprocessing.py
+  topic_classification.py
+  narrative_mapping.py
+  stance_detection.py
+  emotion_analysis.py
 
-Visualization  
-- Charts and plots  
-- Interactive dashboard using Streamlit  
+notebooks/
+dashboard/
+report/
+docs/
+```
+
+
+
+
+## Methodological Principles
+
+- Topic classification is strictly mutually exclusive and sums to 100%
+- Narrative mapping is based on co-occurrence and is not forced to sum
+- All analysis is data-driven and reproducible
+- Raw datasets are not publicly shared for privacy and ethical reasons
+- Outputs are designed for direct use in research, policy, and strategic analysis
+
+---
+
+## Applied Project: GCC Public Opinion Analysis
+
+This framework is currently applied in a multi-country analytical project:
+
+### Public Opinion in the Persian Gulf toward the Iran 2026 War
+
+Countries covered:
+
+- Bahrain
+- Qatar (planned)
+- Kuwait (planned)
+- United Arab Emirates (planned)
+
+This applied project transforms the framework into real-world analytical reports including:
+
+- Narrative maps
+- Stance distributions
+- Sensitivity matrices
+- Public opinion dynamics
+- Policy-relevant insights
+
+---
+
+## Outputs
+
+- Cleaned and structured datasets
+- Narrative and topic distributions
+- Stance analysis toward key actors
+- Account-type comparative analysis
+- Sensitivity and risk matrices
+- Strategic analytical reports
+- Visualization dashboards
+
+---
 
 ## Tools and Technologies
-- Python  
-- pandas and numpy  
-- scikit-learn  
-- nltk or spaCy  
-- matplotlib, seaborn, plotly  
-- Streamlit  
+
+- Python
+- pandas, numpy
+- scikit-learn
+- NLP libraries (NLTK, spaCy)
+- matplotlib, seaborn, plotly
+- Streamlit
+
+---
 
 ## Current Status
-Project structure has been initialized.  
-Next step is dataset selection and exploratory data analysis.
 
-## Future Work
-- Add a real-world social media or political dataset  
-- Build full data processing pipeline  
-- Implement NLP and emotion classification  
-- Train and evaluate machine learning models  
-- Develop an interactive dashboard  
-- Generate a structured analytical report  
+Core framework is established.
+
+First applied case:
+- Bahrain public opinion toward the Iran 2026 War (completed)
+
+Next steps:
+- Extend to Qatar, Kuwait, and UAE
+- Build comparative Gulf-level analysis
+- Develop interactive dashboards
+
+---
 
 ## Author
-Political and Behavioral Data Analyst  
-Focused on public opinion, OSINT, social media analysis, NLP, and machine learning  
-Background in psychology, cognitive science, and neuroscience
-Political and Behavioral Data Analyst  
-Focused on public opinion, OSINT, social media analysis, NLP, and machine learning  
-Background in psychology, cognitive science, and neuroscience
+
+Political and Behavioral Data Analyst
+
+Focused on:
+- Public opinion analysis
+- OSINT and social media intelligence
+- Political narrative analysis
+- NLP and computational social science
+
+Background in:
+- Political sociology
+- Cognitive science
+- Behavioral analysis
+
